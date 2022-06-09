@@ -1,2 +1,4 @@
-package com.example.phonetracker;public @interface BindView {
+package com.example.phonetracker;
+
+public @interface BindView {
 }

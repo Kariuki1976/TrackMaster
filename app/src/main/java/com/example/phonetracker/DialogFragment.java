@@ -14,9 +14,9 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
         builder.setTitle("Dialog via Builder");
-        builder.setMessage("Would you like to see our Phone?");
+        builder.setMessage("Would you like to view some of our Phones?");
 
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override

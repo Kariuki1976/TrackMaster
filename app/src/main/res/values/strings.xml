@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PhoneTracker</string>
+    <string name="name">Insert Your Name</string>
+    <string name="hyperlink"><a href="https://phonesstorekenya.com/?gclid=CjwKCAjwkMeUBhBuEiwA4hpqEPY91c4xDSGYRAWaIgG1Y_-D4N48bHdPPe80nMt4PjlLKJqOxW2YjhoCb3gQAvD_BwE">Visit Our Website</a></string>
 </resources>
