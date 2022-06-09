@@ -4,7 +4,7 @@
 
 ## Description
 
-PhoneApp is a simple mobile application that lists various types of mobile devices that are available for sale to the customers. It also provides for a navigation link to the website that users are able to explore more to chck for specefications, prizes and warranty.
+PhoneApp is a simple mobile application that lists various types of mobile devices that are available for sale to the customers, specifications, prizes and warranty.
 
 ## Setup/Installation Requirements
 
