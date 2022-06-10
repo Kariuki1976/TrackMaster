@@ -57,16 +57,16 @@ public class Products extends AppCompatActivity {
         mImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Products.this, aboutus.class);
+                Intent intent1 = new Intent(Products.this, Review.class);
                 startActivity(intent1);
             }
         });
 
 
         //Fetching user input from the MainActivity
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        mName.setText("Welcome " +name+ "!");
+//        Intent intent = new Intent(EditText, );
+//        String name = intent.getStringExtra("name");
+        mName.setText("Welcome");
 
 
 

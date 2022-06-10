@@ -29,7 +29,7 @@ public class MainActivityTest {
     }
     @Test
     public  void userInput(){
-        TextInputLayout textInputLayout = mainActivity.findViewById(R.id.textInputEditText);
+        TextInputLayout textInputLayout = mainActivity.findViewById(R.id.EditText);
         assertEquals("Enter Your Name", textInputLayout.getEditText().getHint());
 
     }

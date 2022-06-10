@@ -28,7 +28,7 @@ public class MainActivityInstrumentationTest {
 
     @Test
     public void validateEditText(){
-        onView(withId(R.id.textInputEditText)).perform(typeText("Nairobi"))
+        onView(withId(R.id.EditText)).perform(typeText("Nairobi"))
                 .check(matches(withText("Nairobi")));
     }
 

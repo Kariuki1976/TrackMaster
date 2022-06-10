@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/b.jpeg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/call.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/calll.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/cs.xml" value="0.189" />
@@ -11,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/mail.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/phone.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/s.jpg.xml" value="0.1" />
         <entry key="app/src/main/res/font/alfa_slab_one.xml" value="0.18425925925925926" />
         <entry key="app/src/main/res/font/almendra_bold_italic.xml" value="0.18425925925925926" />
         <entry key="app/src/main/res/font/arbutus.xml" value="0.18425925925925926" />
@@ -18,6 +20,7 @@
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/activity_review.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
