@@ -27,7 +27,7 @@ public class aboutus extends AppCompatActivity {
         });
     }
     public void takeMe(){
-        Intent intent = new Intent(this, Products.class);
+        Intent intent = new Intent(this, Review.class);
         startActivity(intent);
     }
 }

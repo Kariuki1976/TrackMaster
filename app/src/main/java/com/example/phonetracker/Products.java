@@ -31,13 +31,18 @@ public class Products extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
+        ButterKnife.bind(this);
+        String view = getIntent().getStringExtra("create");
+        mName.setText(view);
+//        getIntent().putExtra("slim", view);
+
 
         //adding a builder dialogue
         FragmentManager fm = getSupportFragmentManager();
         DialogFragment dialogFragment = new DialogFragment();
         dialogFragment.show(fm, "Sample Fragment");
 
-        ButterKnife.bind(this);
+
         setupHyperlink();// calling the hyperlink method
 
         //Initializing Array adapter
@@ -57,7 +62,10 @@ public class Products extends AppCompatActivity {
         mImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Products.this, Review.class);
+
+
+                Intent intent1 = new Intent(Products.this, aboutus.class);
+
                 startActivity(intent1);
             }
         });
@@ -66,7 +74,7 @@ public class Products extends AppCompatActivity {
         //Fetching user input from the MainActivity
 //        Intent intent = new Intent(EditText, );
 //        String name = intent.getStringExtra("name");
-        mName.setText("Welcome");
+
 
 
 

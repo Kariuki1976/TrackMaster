@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String view = mButton.getText().toString();
-                Intent intent = new Intent(MainActivity.this, aboutus.class);
-                Toast.makeText(MainActivity.this, "Hello"  +view, Toast.LENGTH_SHORT).show();
+                String view = mtextInputEditText.getEditText().getText().toString();
+                Intent intent = new Intent(MainActivity.this, Products.class);
+                Toast.makeText(MainActivity.this, "Hello"  + view, Toast.LENGTH_SHORT).show();
                 intent.putExtra("create", view);
                 startActivity(intent);
             }
