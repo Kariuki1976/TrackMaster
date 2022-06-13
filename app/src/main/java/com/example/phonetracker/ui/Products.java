@@ -2,21 +2,29 @@ package com.example.phonetracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.phonetracker.adapters.ProductsListAdapter;
+import com.example.phonetracker.network.AzharimApi;
+import com.example.phonetracker.network.AzharimmClient;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Products extends AppCompatActivity {
     @BindView(R.id.editTextTextPersonName) EditText mName;
@@ -27,13 +35,54 @@ public class Products extends AppCompatActivity {
 
     private String[] phones = new String[] {"Sumsung", "Tecno","Nokia", "Itel","Xiaomi","Iphone","Sony","Huawei","others"};
 
+    public static int getName() {
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected <ProductsActivity> void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
         ButterKnife.bind(this);
         String view = getIntent().getStringExtra("create");
         mName.setText(view);
+//        api query
+        AzharimApi client = AzharimmClient.getClient();
+
+        Boolean status = null;
+        Call<LatestPhoneSearch> call = (Call<LatestPhoneSearch>) client.getphonetracker(status, "data");
+        call.enqueue(new Callback<LatestPhoneSearch>() {
+
+
+            @Override
+            public void onResponse(Call<LatestPhoneSearch> call, Response<LatestPhoneSearch> response) {
+                hideProgressBar();
+
+                if (response.isSuccessful()) {
+                    restaurants = response.body().getBusinesses();
+                    ProductsListAdapter mAdapter = new ProductsListAdapter(ProductsActivity.this, restaurants);
+                    RecyclerView mRecyclerView = null;
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(ProductsActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+
+                    showProducts();
+                } else {
+                    showUnsuccessfulMessage();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LatestPhoneSearch> call, Throwable t) {
+                hideProgressBar();
+                showFailureMessage();
+            }
+
+        });
+
+
+
 //        getIntent().putExtra("slim", view);
 
 
