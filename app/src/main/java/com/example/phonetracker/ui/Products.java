@@ -99,9 +99,9 @@ public class Products extends AppCompatActivity {
 
 
         //adding a builder dialogue
-//        FragmentManager fm = getSupportFragmentManager();
-//        DialogFragment dialogFragment = new DialogFragment();
-//        dialogFragment.show(fm, "Sample Fragment");
+        FragmentManager fm = getSupportFragmentManager();
+        DialogFragment dialogFragment = new DialogFragment();
+        dialogFragment.show(fm, "Sample Fragment");
 
 
 
