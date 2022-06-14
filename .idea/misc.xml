@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.10641486810551559" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/b.jpeg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/call.xml" value="0.22" />
@@ -17,10 +18,12 @@
         <entry key="app/src/main/res/font/almendra_bold_italic.xml" value="0.18425925925925926" />
         <entry key="app/src/main/res/font/arbutus.xml" value="0.18425925925925926" />
         <entry key="app/src/main/res/font/archivo_black.xml" value="0.13819444444444445" />
+        <entry key="app/src/main/res/layout/Products_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/activity_review.xml" value="0.14221014492753623" />
+        <entry key="app/src/main/res/layout/products_list_item.xml" value="0.15572916666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

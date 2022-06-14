@@ -1,4 +1,4 @@
-package com.example.phonetracker;
+package com.example.phonetracker.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -8,17 +8,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.phonetracker.network.DialogFragment;
+import com.example.phonetracker.models.LatestPhoneSearch;
+import com.example.phonetracker.R;
 import com.example.phonetracker.adapters.ProductsListAdapter;
+import com.example.phonetracker.models.Phone;
 import com.example.phonetracker.network.AzharimApi;
 import com.example.phonetracker.network.AzharimmClient;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,55 +34,61 @@ import retrofit2.Response;
 
 public class Products extends AppCompatActivity {
     @BindView(R.id.editTextTextPersonName) EditText mName;
-    @BindView(R.id.productListView) ListView mListView;
     @BindView(R.id.hyperlinkTextView) TextView mLink;
     @BindView(R.id.contactUs)
     ImageButton mImageButton;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
 
-    private String[] phones = new String[] {"Sumsung", "Tecno","Nokia", "Itel","Xiaomi","Iphone","Sony","Huawei","others"};
 
-    public static int getName() {
-    }
 
     @Override
-    protected <ProductsActivity> void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
         String view = getIntent().getStringExtra("create");
         mName.setText(view);
+
+        mImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String view2 = mName.getText().toString();
+                Intent intent = new Intent(Products.this, aboutus.class);
+                Toast.makeText(Products.this, "Hello"  + " " + view2, Toast.LENGTH_SHORT).show();
+                intent.putExtra("create", view2);
+                startActivity(intent);
+            }
+        });
 //        api query
         AzharimApi client = AzharimmClient.getClient();
 
         Boolean status = null;
-        Call<LatestPhoneSearch> call = (Call<LatestPhoneSearch>) client.getphonetracker(status, "data");
+        Call<LatestPhoneSearch> call = (Call<LatestPhoneSearch>) client.getphonetracker();
         call.enqueue(new Callback<LatestPhoneSearch>() {
 
 
             @Override
             public void onResponse(Call<LatestPhoneSearch> call, Response<LatestPhoneSearch> response) {
-                hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    restaurants = response.body().getBusinesses();
-                    ProductsListAdapter mAdapter = new ProductsListAdapter(ProductsActivity.this, restaurants);
-                    RecyclerView mRecyclerView = null;
+                    List<Phone> myPhone= response.body().getData().getPhones();
+                    ProductsListAdapter mAdapter = new ProductsListAdapter(Products.this, myPhone);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(ProductsActivity.this);
+                            new LinearLayoutManager(Products.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
-                    showProducts();
                 } else {
-                    showUnsuccessfulMessage();
+                    Toast.makeText(Products.this, "Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LatestPhoneSearch> call, Throwable t) {
-                hideProgressBar();
-                showFailureMessage();
+                Toast.makeText(Products.this, "Unexpected error", Toast.LENGTH_SHORT).show();
+                Log.e(Products.class.getSimpleName(),"Error",t);
             }
 
         });
@@ -87,37 +99,11 @@ public class Products extends AppCompatActivity {
 
 
         //adding a builder dialogue
-        FragmentManager fm = getSupportFragmentManager();
-        DialogFragment dialogFragment = new DialogFragment();
-        dialogFragment.show(fm, "Sample Fragment");
+//        FragmentManager fm = getSupportFragmentManager();
+//        DialogFragment dialogFragment = new DialogFragment();
+//        dialogFragment.show(fm, "Sample Fragment");
 
 
-        setupHyperlink();// calling the hyperlink method
-
-        //Initializing Array adapter
-//        ArrayAdapter adapter = new ArrayAdapter( this, android.R.layout.simple_list_item_1,phones);
-        ProductsArrayAdapter adapter = new ProductsArrayAdapter(this, android.R.layout.simple_list_item_1,phones);
-        mListView.setAdapter(adapter);
-
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String phone = ((TextView)view).getText().toString();
-                Toast.makeText(Products.this, phone, Toast.LENGTH_LONG).show();
-            }
-        });
-
-        //contact us navigation
-        mImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Intent intent1 = new Intent(Products.this, aboutus.class);
-
-                startActivity(intent1);
-            }
-        });
 
 
         //Fetching user input from the MainActivity

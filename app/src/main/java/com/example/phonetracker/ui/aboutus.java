@@ -1,4 +1,4 @@
-package com.example.phonetracker;
+package com.example.phonetracker.ui;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.phonetracker.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

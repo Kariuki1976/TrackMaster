@@ -1,8 +1,10 @@
-package com.example.phonetracker;
+package com.example.phonetracker.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.phonetracker.R;
 
 public class Review extends AppCompatActivity {
 

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.phonetracker">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,21 +16,21 @@
         android:theme="@style/Theme.PhoneTracker"
         tools:targetApi="31">
         <activity
-            android:name=".Review"
+            android:name=".ui.Review"
             android:exported="false" />
         <activity
-            android:name=".aboutus"
+            android:name=".ui.aboutus"
             android:exported="false" />
         <activity
-            android:name=".Products"
+            android:name=".ui.Products"
             android:exported="false" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.phonetracker.MainActivity" />
+            android:value="com.example.phonetracker.ui.MainActivity" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

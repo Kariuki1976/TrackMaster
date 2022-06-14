@@ -3,11 +3,10 @@ package com.example.phonetracker;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.google.android.material.textfield.TextInputLayout;
+import com.example.phonetracker.ui.Products;
 
 import org.junit.Before;
 import org.junit.Test;

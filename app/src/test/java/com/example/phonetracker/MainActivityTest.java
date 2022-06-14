@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.phonetracker.ui.MainActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.junit.Before;

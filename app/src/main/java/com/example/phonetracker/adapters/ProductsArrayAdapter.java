@@ -1,4 +1,4 @@
-package com.example.phonetracker;
+package com.example.phonetracker.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

@@ -1,4 +1,4 @@
-package com.example.phonetracker;
+package com.example.phonetracker.network;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package com.example.phonetracker;
+package com.example.phonetracker.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.phonetracker.ui.Products;
+import com.example.phonetracker.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 import butterknife.BindView;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String view = mtextInputEditText.getEditText().getText().toString();
                 Intent intent = new Intent(MainActivity.this, Products.class);
-                Toast.makeText(MainActivity.this, "Hello"  + view, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Hello"  + " " + view, Toast.LENGTH_SHORT).show();
                 intent.putExtra("create", view);
                 startActivity(intent);
             }
