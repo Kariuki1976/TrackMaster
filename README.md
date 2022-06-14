@@ -46,6 +46,17 @@ The user is able to make enquiries through our contacts on the about us page.
 * XML for designing the frontend
 
 
+## Dependencies
+
+- Java
+- Espresso Testing Framework
+- Roboelectric Testing Frameowrk
+- JUnit Testing Framework
+- Retrofit
+- Glide
+- Gson Converter
+
+
 
 ## Testing
 * Instrumentation Testing
