@@ -20,10 +20,16 @@
         <entry key="app/src/main/res/font/archivo_black.xml" value="0.13819444444444445" />
         <entry key="app/src/main/res/layout/Products_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
+        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_phone_detail.xml" value="0.34757281553398056" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/activity_review.xml" value="0.14221014492753623" />
+        <entry key="app/src/main/res/layout/fragment_phone_detail.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/products_list_item.xml" value="0.15572916666666667" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/menu/menu_search.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+import com.example.phonetracker.models.datamodel.Data;
 @Generated("jsonschema2pojo")
 public class LatestPhoneSearch {
 
@@ -49,5 +49,6 @@ public class LatestPhoneSearch {
     public void setData(Data data) {
         this.data = data;
     }
+
 
 }

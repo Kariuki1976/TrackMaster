@@ -1,6 +1,8 @@
 package com.example.phonetracker.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.phonetracker.models.Phone;
+import com.example.phonetracker.ui.PhoneDetailActivity;
 import com.example.phonetracker.ui.Products;
 import com.example.phonetracker.R;
 import com.squareup.picasso.Picasso;
@@ -37,8 +40,16 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     }
 
     @Override
-    public void onBindViewHolder(ProductsViewHolder holder, int position) {
+    public void onBindViewHolder(ProductsViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.bindProducts(mPhone.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent detail = new Intent(mContext, PhoneDetailActivity.class);
+                detail.putExtra("slug", mPhone.get(position).getSlug());
+                mContext.startActivity(detail);
+            }
+        });
     }
 
     @Override
@@ -59,6 +70,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+
         }
 
         public void bindProducts(Phone phone) {

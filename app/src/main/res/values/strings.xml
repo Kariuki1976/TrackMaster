@@ -3,4 +3,16 @@
     <string name="app_name">PhoneTracker</string>
     <string name="name">Insert Your Name</string>
     <string name="hyperlink"><a href="https://phonesstorekenya.com/?gclid=CjwKCAjwkMeUBhBuEiwA4hpqEPY91c4xDSGYRAWaIgG1Y_-D4N48bHdPPe80nMt4PjlLKJqOxW2YjhoCb3gQAvD_BwE">Visit Our Website</a></string>
+    <string name="release_date">release date</string>
+    <string name="slug">slug</string>
+    <string name="phone_dimension">phone dimension</string>
+    <string name="phone_os">phone_os</string>
+    <string name="storage">storage</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account_log_in_here">Already have an account? Log in here!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="login">Login</string>
 </resources>

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.phonetracker">
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,6 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PhoneTracker"
         tools:targetApi="31">
+        <activity android:name=".ui.LoginActivity"
+            android:exported="true">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.CreateAccount"
+            android:exported="false" />
+        <activity
+            android:name=".ui.PhoneDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SavedPhonesListActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.Review"
             android:exported="false" />
@@ -32,11 +51,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
